@@ -22,7 +22,7 @@ namespace Uss2
             scoreList.Add(score);
             scoreList.Sort();
             scoreList.Reverse();
-            using (StreamWriter to_file = new StreamWriter("scores.txt"))
+            using (StreamWriter to_file = new StreamWriter("Scores.txt"))
             {
                 foreach (int score in scoreList)
                 {
