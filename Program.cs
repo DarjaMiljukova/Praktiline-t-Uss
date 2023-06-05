@@ -55,7 +55,7 @@ namespace Uss2
             Console.ReadLine();
         }
 
-    
+
 
         static void WriteGameOver()
         {
