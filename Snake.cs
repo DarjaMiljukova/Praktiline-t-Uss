@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,6 @@ namespace Uss2
     class Snake : Figure
     {
         Direction direction;
-
         public Snake(Point tail, int length, Direction _direction)
         {
             direction = _direction;
@@ -22,7 +22,7 @@ namespace Uss2
             }
         }
 
-        public void Move()
+        internal void Move()
         {
             Point tail = pList.First();
             pList.Remove(tail);
@@ -41,7 +41,7 @@ namespace Uss2
             return nextPoint;
         }
 
-        public bool IsHitTail()
+        internal bool IsHitTail()
         {
             var head = pList.Last();
             for (int i = 0; i < pList.Count - 2; i++)
@@ -67,10 +67,49 @@ namespace Uss2
         public bool Eat(Point food)
         {
             Point head = GetNextPoint();
+            //if(head.x == food.x && head.y == food.y)
             if (head.IsHit(food))
             {
                 food.sym = head.sym;
                 pList.Add(food);
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public bool Poisoned(List<Point> poisons)
+        {
+            Point head = GetNextPoint();
+
+            foreach (Point poison in poisons)
+            {
+                if (head.IsHit(poison))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public bool Poisoned2(Point poisons2)
+        {
+            Point head = GetNextPoint();
+            if (head.IsHit(poisons2))
+            {
+                poisons2.sym = head.sym;
+                pList.Add(poisons2);
+                return true;
+            }
+            else
+                return false;
+        }
+        public bool Scored(Point scor)
+        {
+            Point head = GetNextPoint();
+            if (head.IsHit(scor))
+            {
+                scor.sym = head.sym;
+                pList.Add(scor);
                 return true;
             }
             else

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Uss2;
 
 namespace Uss2
 {
@@ -62,15 +61,15 @@ namespace Uss2
             Console.Write(sym);
         }
 
+        public override string ToString()
+        {
+            return x + ", " + y + ", " + sym;
+        }
+
         public void Clear()
         {
             sym = ' ';
             Draw();
-        }
-
-        public override string ToString()
-        {
-            return x + ", " + y + ", " + sym;
         }
     }
 }

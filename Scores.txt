@@ -1,1 +1,15 @@
-﻿
+﻿Killer: 0
+Darja: 0
+Darja: 0
+Darja: 7
+Bloody: 4
+Bloody: 1
+Darja: 0
+darja: 5
+darja: 1
+Darja: 0
+Darja: 1
+darja: 3
+Darja: 5
+proverka: 0
+proverka: 1

@@ -42,6 +42,7 @@ namespace Uss2
         {
             foreach (var wall in wallList)
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 wall.Draw();
             }
         }

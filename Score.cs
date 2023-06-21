@@ -11,7 +11,6 @@ namespace Uss2
         private int score;
         private List<int> scoreList;
 
-
         public void AddScore(int p)
         {
             score += p;
@@ -22,7 +21,7 @@ namespace Uss2
             scoreList.Add(score);
             scoreList.Sort();
             scoreList.Reverse();
-            using (StreamWriter to_file = new StreamWriter("Scores.txt"))
+            using (StreamWriter to_file = new StreamWriter("Scores.txt")) /*запись символов в заданной кодировке*/
             {
                 foreach (int score in scoreList)
                 {
